@@ -1,9 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content [fullscreen]="true">
+  <!-- Titulo de la App -->
+  <h1 class="ion-text-center appTitle">LiveApp</h1>
+  <h3 class="ion-text-center appSubTitle">¿Me registrare?</h3>
+  <!-- Titulo de la App -->
+  <!-- Formulario de registro -->
+  <form class="authForm" [formGroup]="registerForm">
+    <ion-item class="formItem">
+      <ion-label class="formLabel" position="floating">Nombre y apellido</ion-label>
+      <ion-input type="text" class="formInput" formControlName="userName"></ion-input>
+    </ion-item>
+    <ion-item class="formItem">
+      <ion-label class="formLabel" position="floating">Correo electrónico</ion-label>
+      <ion-input type="email" class="formInput" formControlName="userEmail"></ion-input>
+    </ion-item>
+    <ion-item class="formItem">
+      <ion-label class="formLabel" position="floating">Contraseña</ion-label>
+      <ion-input type="password" class="formInput" formControlName="userPassword"></ion-input>
+    </ion-item>
+  </form>
+  <!-- Formulario de registro -->
+  <!-- Boton para navegar -->
+  <ion-button class="ion-text-center loginButton ion-text-capitalize" color="dark" (click)="createUser()" [disabled]="registerForm.invalid">Vamos a ver</ion-button>
+  <!-- Boton para navegar -->
+  <!-- Texto para navegaro -->
+  <h5 class="ion-text-center registerText" (click)="goToRegister()">¿Ya tienes cuenta? dale pa' ca'</h5>
+  <!-- Texto para navegaro -->
 </ion-content>
